@@ -1,0 +1,5 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Cannot access offset mixed on iterable\\.$#"
+			count: 1

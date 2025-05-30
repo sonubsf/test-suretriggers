@@ -1,0 +1,42 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+    level: 8
+    reportUnmatchedIgnoredErrors: false
+    bootstrapFiles:
+        - ./vendor/autoload.php
+    ignoreErrors:
+        - message: '#Access to an undefined property .*#'
+          paths:
+              - app/
+        - message: '#Unable to resolve the template type TMapWithKeysValue in call to method#'
+          paths:
+              - app/
+        - message: '#PHPDoc type .* of property .* is not covariant with PHPDoc type#'
+          paths:
+              - app/
+        - message: '#Cannot access offset .* on iterable#'
+          paths:
+              - app/
+        - message: '#Return type of call to method Illuminate\\Database\\Eloquent\\Collection<int,App\\Models\\IntegrationVersion>::map\(\) contains unresolvable type#'
+          paths:
+              - app/
+        - message: '#Unable to resolve the template type TMapValue in call to method#'
+          paths:
+              - app/
+        - message: '#Cannot access offset .* on Illuminate\\Contracts\\Foundation\\Application#'
+          paths:
+              - app/
+        - message: '#Strict comparison using !== between mixed and null will always evaluate to true.#'
+          paths:
+              - app/
+        - identifier: missingType.iterableValue
+          paths:
+              - app/
+        - identifier: missingType.generics
+          paths:
+              - app/
+    treatPhpDocTypesAsCertain: false
